@@ -1,16 +1,23 @@
 import sqlite3
 
-print(""" 
-    1 = criar banco de dados
-    2 = ler dados
-    3 = inserir dados
-    4 = deletando dados
-    5 = alterando dados
-    """)
-opcao = input("Escolha sua opcao:")
+print("""
+        1 = criar banco de dados
+        2 = ler dados
+        3 = inserir dados
+        4 = deletando dados
+        5 = alterando dados
+        """)
+opcao = int(input("Escolha sua opcao:"))
+
+
+while opcao > 5:
+    print("Escolha uma opção válida!")
+    opcao = int(input("Escolha sua opcao:"))
+
+
 
 #criando db
-if opcao == "1":
+if opcao == 1:
     conn = sqlite3.connect('clientes.db')
     # definindo um cursor
     cursor = conn.cursor()
@@ -37,7 +44,7 @@ if opcao == "1":
 
 
 # ler dados
-elif opcao == "2":
+elif opcao == 2:
     conn = sqlite3.connect('clientes.db')
     cursor = conn.cursor()
 
@@ -50,6 +57,7 @@ elif opcao == "2":
         print(linha)
 
     conn.close()
+
 
 #inserir dados
 elif opcao == "3":
@@ -100,7 +108,7 @@ elif opcao == "4":
 
 
 #alterando dados
-else:
+elif opcao == "5":
     conn = sqlite3.connect('clientes.db')
     cursor = conn.cursor()
 
