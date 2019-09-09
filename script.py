@@ -52,6 +52,15 @@ else:
               print(linha)
           conn.close()
 
+          print("""
+          1 = criar banco de dados
+          2 = ler dados
+          3 = inserir dados
+          4 = deletando dados
+          5 = alterando dados
+          """)
+          opcao = int(input("Escolha sua opcao:"))
+
 
 
     #inserir dados
@@ -81,7 +90,7 @@ else:
     elif opcao == 4:
           conn = sqlite3.connect('clientes.db')
           cursor = conn.cursor()
-          d_cliente = 8
+          id_cliente = 8
           # excluindo um registro da tabela
           cursor.execute("""
           DELETE FROM clientes
