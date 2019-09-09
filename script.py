@@ -17,20 +17,23 @@ while opcao > 5:
 else:
     #criando db
     if opcao == 1:
-        conn = sqlite3.connect('clientes.db')
+        conn = sqlite3.connect('alunos.db')
         # definindo um cursor
         cursor = conn.cursor()
         # criando uma tabela (schema)
         cursor.execute("""
-        CREATE TABLE clientes (
-            id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+        CREATE TABLE alunos (
+            id_numpasta INTEGER NOT NULL PRIMARY KEY,
             nome TEXT NOT NULL,
             idade INTEGER,
             cpf     VARCHAR(11) NOT NULL,
-            email TEXT NOT NULL,
+            turma TEXT NOT NULL,
+            ano NUMERIC(4),
+            situacao TEXT,
+            pedencias TEXT,
             fone TEXT,
             cidade TEXT,
-            uf VARCHAR(2) NOT NULL,
+            respondavel TEXT NOT NULL,
             criado_em DATE NOT NULL
             );""")
 
@@ -42,11 +45,11 @@ else:
 
     # ler dados
     elif opcao == 2:
-          conn = sqlite3.connect('clientes.db')
+          conn = sqlite3.connect('alunos.db')
           cursor = conn.cursor()
           # lendo os dados
           cursor.execute("""
-          SELECT * FROM  clientes;
+          SELECT * FROM  alunos;
           """)
           for linha in cursor.fetchall():
               print(linha)
@@ -56,7 +59,7 @@ else:
 
     #inserir dados
     elif opcao == 3:
-          conn = sqlite3.connect('clientes.db')
+          conn = sqlite3.connect('alunos.db')
           cursor = conn.cursor()
           # solicitando os dados do usuário
           p_nome = input('Nome: ')
@@ -79,12 +82,12 @@ else:
 
     #deletando dados
     elif opcao == 4:
-          conn = sqlite3.connect('clientes.db')
+          conn = sqlite3.connect('alunos.db')
           cursor = conn.cursor()
           id_cliente = 8
           # excluindo um registro da tabela
           cursor.execute("""
-          DELETE FROM clientes
+          DELETE FROM alunos
           WHERE id = ?
           """, (id_cliente,))
           conn.commit()
@@ -95,7 +98,7 @@ else:
 
     #alterando dados
     elif opcao == 5:
-          conn = sqlite3.connect('clientes.db')
+          conn = sqlite3.connect('alunos.db')
           cursor = conn.cursor()
           # idermos definir o id a ser alterado
           id_cliente = 1
@@ -105,7 +108,7 @@ else:
           novo_criado_em = '2014-06-11'
           # alterando os dados da tabela
           cursor.execute("""
-          UPDATE clientes
+          UPDATE alunos
           SET fone = ?, criado_em = ?
           WHERE id = ?
           """, (novo_fone, novo_criado_em, id_cliente))
