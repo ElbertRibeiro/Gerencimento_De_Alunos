@@ -52,15 +52,6 @@ else:
               print(linha)
           conn.close()
 
-          print("""
-          1 = criar banco de dados
-          2 = ler dados
-          3 = inserir dados
-          4 = deletando dados
-          5 = alterando dados
-          """)
-          opcao = int(input("Escolha sua opcao:"))
-
 
 
     #inserir dados
@@ -86,7 +77,7 @@ else:
           print('Dados inseridos com sucesso')
           conn.close
 
-        #deletando dados
+    #deletando dados
     elif opcao == 4:
           conn = sqlite3.connect('clientes.db')
           cursor = conn.cursor()
@@ -102,7 +93,7 @@ else:
 
 
 
-        #alterando dados
+    #alterando dados
     elif opcao == 5:
           conn = sqlite3.connect('clientes.db')
           cursor = conn.cursor()
