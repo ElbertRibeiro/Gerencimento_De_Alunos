@@ -65,11 +65,14 @@ else:
           p_nome = input('Nome: ')
           p_idade = input('Idade: ')
           p_cpf = input('CPF: ')
-          p_email = input('Email: ')
+          p_turma = input('Turma: ')
+          p_ano = input('Ano: ')
+          p_situacao = input('Situação: ')
+          p_pedencias = input('Pendências: ')
           p_fone = input('Fone: ')
           p_cidade = input('Cidade: ')
-          p_uf = input('UF: ')
-          p_criado_em = input('Digite a data atual (yyyy-mm-dd): ')
+          p_responsavel = input('Responsável: ')
+          p_criado_em = input('Digite a data atual (dd-mm-aaaa): ')
           
           # inserindo os dados na tabela
           cursor.execute("""
