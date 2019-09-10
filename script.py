@@ -9,7 +9,6 @@ print("""
         """)
 opcao = int(input("Escolha sua opcao:"))
 
-
 while opcao > 5:
     print("Escolha uma opção válida!")
     opcao = int(input("Escolha sua opcao:"))
@@ -42,7 +41,6 @@ else:
         # encerrando a conecção com o db
         conn.close()
 
-
     # ler dados
     elif opcao == 2:
           conn = sqlite3.connect('alunos.db')
@@ -54,8 +52,6 @@ else:
           for linha in cursor.fetchall():
               print(linha)
           conn.close()
-
-
 
     #inserir dados
     elif opcao == 3:
@@ -97,8 +93,6 @@ else:
           conn.commit()
           print('Registro excluido com sucesso.')
           conn.close()
-
-
 
     #alterando dados
     elif opcao == 5:
