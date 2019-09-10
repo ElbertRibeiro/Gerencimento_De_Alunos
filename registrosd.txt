@@ -1,0 +1,12 @@
+id_numpasta INTEGER NOT NULL PRIMARY KEY,
+           - nome TEXT NOT NULL,
+            - idade INTEGER,
+            - cpf     VARCHAR(11) NOT NULL,
+            - turma TEXT NOT NULL,
+            -ano NUMERIC(4),
+            -situacao TEXT,
+            -pedencias TEXT,
+            -fone TEXT,
+            -cidade TEXT,
+            -respondavel TEXT NOT NULL,
+            -criado_em DATE NOT NULL
