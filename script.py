@@ -78,7 +78,7 @@ else:
           cursor.execute("""
           INSERT INTO clientes (nome, idade, cpf, email, fone, cidade, uf, criado_em)
           VALUES (?,?,?,?,?,?,?,?)
-          """, (p_nome, p_idade, p_cpf, p_email, p_fone, p_cidade, p_uf, p_criado_em))
+          """, (p_nome, p_idade, p_cpf, p_turma, p_fone, p_cidade, p_responsavel, p_criado_em))
           conn.commit()
           print('Dados inseridos com sucesso')
           conn.close
