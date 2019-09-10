@@ -62,6 +62,7 @@ else:
           conn = sqlite3.connect('alunos.db')
           cursor = conn.cursor()
           # solicitando os dados do usuário
+          p_numpasta = input('Numero da pasta: ')
           p_nome = input('Nome: ')
           p_idade = input('Idade: ')
           p_cpf = input('CPF: ')
@@ -76,9 +77,9 @@ else:
           
           # inserindo os dados na tabela
           cursor.execute("""
-          INSERT INTO clientes (nome, idade, cpf, email, fone, cidade, uf, criado_em)
-          VALUES (?,?,?,?,?,?,?,?)
-          """, (p_nome, p_idade, p_cpf, p_turma, p_fone, p_cidade, p_responsavel, p_criado_em))
+          INSERT INTO clientes (id_numpasta, nome, idade, cpf, turma, ano, situacao, pedencias, fone, cidade, responsavel, criado_em)
+          VALUES (?,?,?,?,?,?,?,?,?,?.?,?)
+          """, (p_numpasta, p_nome, p_idade, p_cpf, p_turma, p_ano, p_situacao, p_pedencias, p_fone, p_cidade, p_responsavel, p_criado_em))
           conn.commit()
           print('Dados inseridos com sucesso')
           conn.close
