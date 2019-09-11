@@ -35,7 +35,6 @@ else:
             respondavel TEXT NOT NULL,
             criado_em DATE NOT NULL
             );""")
-
         print('Tabela criada com sucesso')
         # desconectando...
         # encerrando a conecção com o db
