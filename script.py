@@ -9,7 +9,7 @@ print("""
         """)
 opcao = int(input("Escolha sua opcao:"))
 
-while opcao > 5:
+while opcao > 6:
     print("Escolha uma opção válida!")
     opcao = int(input("Escolha sua opcao:"))
 
@@ -25,15 +25,14 @@ else:
             id_numpasta INTEGER NOT NULL PRIMARY KEY,
             nome TEXT NOT NULL,
             idade INTEGER,
-            cpf     VARCHAR(11) NOT NULL,
+            cpf VARCHAR(11) NOT NULL,
             turma TEXT NOT NULL,
             ano NUMERIC(4),
             situacao TEXT,
             pedencias TEXT,
             fone TEXT,
             cidade TEXT,
-            respondavel TEXT NOT NULL,
-            criado_em DATE NOT NULL
+            responsavel TEXT NOT NULL
             );""")
         print('Tabela criada com sucesso')
         # desconectando...
@@ -68,13 +67,12 @@ else:
           p_fone = input('Fone: ')
           p_cidade = input('Cidade: ')
           p_responsavel = input('Responsável: ')
-          p_criado_em = input('Digite a data atual (dd-mm-aaaa): ')
           
           # inserindo os dados na tabela
           cursor.execute("""
-          INSERT INTO clientes (id_numpasta, nome, idade, cpf, turma, ano, situacao, pedencias, fone, cidade, responsavel, criado_em)
-          VALUES (?,?,?,?,?,?,?,?,?,?.?,?)
-          """, (p_numpasta, p_nome, p_idade, p_cpf, p_turma, p_ano, p_situacao, p_pedencias, p_fone, p_cidade, p_responsavel, p_criado_em))
+          INSERT INTO alunos (id_numpasta, nome, idade, cpf, turma, ano, situacao, pedencias, fone, cidade, responsavel)
+          VALUES (?,?,?,?,?,?,?,?,?,?,?)
+          """, (p_numpasta, p_nome, p_idade, p_cpf, p_turma, p_ano, p_situacao, p_pedencias, p_fone, p_cidade, p_responsavel,))
           conn.commit()
           print('Dados inseridos com sucesso')
           conn.close
@@ -87,7 +85,7 @@ else:
           # excluindo um registro da tabela
           cursor.execute("""
           DELETE FROM alunos
-          WHERE id = ?
+          WHERE id_numpasta = ?
           """, (id_numpasta,))
           conn.commit()
           print('Registro excluido com sucesso.')
@@ -111,4 +109,21 @@ else:
           """, (novo_fone, novo_criado_em, id_cliente))
           conn.commit()
           print('Dados alterados com sucesso')
+          conn.close()
+
+    #buscando dados
+    elif opcao == 6:
+          conn = sqlite3.connect('alunos.db')
+          cursor = conn.cursor()
+          #definir nome a ser consultado
+          p_nome = input('Digite o nome do aluno: ')
+          cursor.execute("""
+          SELECT id_numpasta, nome, idade, cpf, turma, ano, situacao, pedencias, fone, cidade, responsavel
+          FROM alunos 
+          WHERE nome = ?
+          """, (p_nome,))
+          for linha in cursor.fetchall():
+              print(linha)
+          conn.commit()
+          print('---Busca concluida---')
           conn.close()
