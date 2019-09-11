@@ -6,6 +6,7 @@ print("""
         3 = inserir dados
         4 = deletando dados
         5 = alterando dados
+        6 = Pesuisar aluno
         """)
 opcao = int(input("Escolha sua opcao:"))
 
