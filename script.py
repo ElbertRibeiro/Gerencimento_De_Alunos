@@ -83,12 +83,12 @@ else:
     elif opcao == 4:
           conn = sqlite3.connect('alunos.db')
           cursor = conn.cursor()
-          id_cliente = 8
+          id_numpasta = input('Numero da pasta: ')
           # excluindo um registro da tabela
           cursor.execute("""
           DELETE FROM alunos
           WHERE id = ?
-          """, (id_cliente,))
+          """, (id_numpasta,))
           conn.commit()
           print('Registro excluido com sucesso.')
           conn.close()
