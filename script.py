@@ -119,12 +119,10 @@ else:
           #definir nome a ser consultado
           p_nome = input('Digite o nome do aluno: ')
           cursor.execute("""
-          SELECT id_numpasta, nome, idade, cpf, turma, ano, situacao, pedencias, fone, cidade, responsavel
-          FROM alunos 
-          WHERE nome = ?
-          """, (p_nome,))
+          SELECT * FROM alunos WHERE nome like ?
+          """, (p_nome + '%',))
           for linha in cursor.fetchall():
               print(linha)
-          conn.commit()
+          #conn.commit()
           print('---Busca concluida---')
           conn.close()
