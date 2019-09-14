@@ -1,20 +1,18 @@
 import sqlite3
+from time import sleep
 
-print("""
-        1 = criar banco de dados
-        2 = ler dados
-        3 = inserir dados
-        4 = deletando dados
-        5 = alterando dados
+opcao = 0
+while opcao !=7:
+    print("""
+        1 = Criar banco de dados
+        2 = Ler dados
+        3 = Inserir dados
+        4 = Deletando dados
+        5 = Alterando dados
         6 = Pesuisar aluno
+        7 = Sair do programa
         """)
-opcao = int(input("Escolha sua opcao:"))
-
-while opcao > 6:
-    print("Escolha uma opção válida!")
     opcao = int(input("Escolha sua opcao:"))
-
-else:
     #criando db
     if opcao == 1:
         conn = sqlite3.connect('alunos.db')
@@ -126,3 +124,10 @@ else:
           #conn.commit()
           print('---Busca concluida---')
           conn.close()
+    elif opcao == 7:
+        print('Finalizando...')
+    else:
+        print('Opção invalida, tente novamente!!!')
+    print('=-=' * 10)
+    sleep(2)
+print("---Saindo do programa---")
