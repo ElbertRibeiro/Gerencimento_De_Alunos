@@ -1,2 +1,3 @@
 # Gerencimento_De_Alunos
- Sistema simples feito em Python para gerenciar cadastro de alunos de uma escolar publica do ensino fundamental.
+ System made in python.
+This is a student management system where the user can create a database, register students, delete and update data.
