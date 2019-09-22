@@ -92,23 +92,60 @@ while opcao !=7:
 
     #alterando dados
     elif opcao == 5:
-          conn = sqlite3.connect('alunos.db')
-          cursor = conn.cursor()
-          # idermos definir o id a ser alterado
-          id_cliente = 1
-          # como usamos o fone como parametro
-          # iremos criara um novo fone
-          novo_fone = '11-1000-2014'
-          novo_criado_em = '2014-06-11'
-          # alterando os dados da tabela
-          cursor.execute("""
-          UPDATE alunos
-          SET fone = ?, criado_em = ?
-          WHERE id = ?
-          """, (novo_fone, novo_criado_em, id_cliente))
-          conn.commit()
-          print('Dados alterados com sucesso')
-          conn.close()
+          escolha = 0
+          while escolha !=4:
+              print("""
+              1 = Numero para contato
+              2 = Situação escolar
+              3 = Documentações pendentes
+              4 = Sair do menu
+              """)
+              escolha = int(input("Escolha sua opção: "))
+              if escolha == 1:
+                  conn = sqlite3.connect('alunos.db')
+                  cursor = conn.cursor()
+                  # idermos definir o id a ser alterado
+                  id_numpasta = int(input('Digite o  numero da pasta para alterar os dados: '))
+                  # como usamos o fone como parametro
+                  # iremos criara um novo fone
+                  novo_fone = input("Digite um novo numero para contato: ")
+                  # alterando os dados da tabela
+                  cursor.execute("""
+                  UPDATE alunos
+                  SET fone = ?,
+                  WHERE id = ?
+                  """, (novo_fone, id_numpasta))
+                  conn.commit()
+                  print('Dados alterados com sucesso')
+                  conn.close()
+              elif escolha == 2:
+                  conn = sqlite3.connect('alunos.db')
+                  cursor = conn.cursor()
+                  # idermos definir o id a ser alterado
+                  id_numpasta = int(input('Digite o  numero da pasta para alterar os dados'))
+                  # como usamos o fone como parametro
+                  # iremos criara um novo fone
+                  novo_situacao = input("Digite a atual situação escolar: ")
+                  # alterando os dados da tabela
+                  cursor.execute("""
+                  UPDATE alunos
+                  SET situacao = ?,
+                  WHERE id = ?
+                  """, (novo_situacao, id_numpasta))
+                  conn.commit()
+                  print('Dados alterados com sucesso')
+                  conn.close()
+
+              elif escolha == 4:
+                  conn = sqlite3.connect('alunos.db')
+                  cursor = conn.cursor()
+                  print('Saindo...')
+                  conn.close()
+
+
+              else:
+                  print('Opção invalida, tente novamente!!!')
+              print('-----------' * 10)
 
     #buscando dados
     elif opcao == 6:
