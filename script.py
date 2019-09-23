@@ -21,10 +21,10 @@ while opcao !=7:
         # criando uma tabela (schema)
         cursor.execute("""
         CREATE TABLE alunos (
-            id_numpasta INTEGER NOT NULL PRIMARY KEY,
+            id_numpasta TEXT NOT NULL,
             nome TEXT NOT NULL,
             idade INTEGER,
-            cpf VARCHAR(11) NOT NULL,
+            cpf VARCHAR(11) NOT NULL PRIMARY KEY,
             turma TEXT NOT NULL,
             ano NUMERIC(4),
             situacao TEXT,
@@ -113,8 +113,8 @@ while opcao !=7:
                   cursor.execute("""
                   UPDATE alunos
                   SET fone = ?,
-                  WHERE id = ?
-                  """, (novo_fone, id_numpasta))
+                  WHERE id_numpasta = ?
+                  """, (novo_fone, id_numpasta,))
                   conn.commit()
                   print('Dados alterados com sucesso')
                   conn.close()
@@ -130,8 +130,26 @@ while opcao !=7:
                   cursor.execute("""
                   UPDATE alunos
                   SET situacao = ?,
-                  WHERE id = ?
-                  """, (novo_situacao, id_numpasta))
+                  WHERE id_numpasta = ?
+                  """, (novo_situacao, id_numpasta,))
+                  conn.commit()
+                  print('Dados alterados com sucesso')
+                  conn.close()
+
+              elif escolha == 3:
+                  conn = sqlite3.connect('alunos.db')
+                  cursor = conn.cursor()
+                  # idermos definir o id a ser alterado
+                  id_numpasta = int(input('Digite o  numero da pasta para alterar os dados'))
+                  # como usamos o fone como parametro
+                  # iremos criara um novo fone
+                  novo_pedencias = input("Digite a atualização de pendencias: ")
+                  # alterando os dados da tabela
+                  cursor.execute("""
+                  UPDATE alunos
+                  SET pedencias = ?,
+                  WHERE id_numpasta = ?
+                  """, (novo_pedencias, id_numpasta,))
                   conn.commit()
                   print('Dados alterados com sucesso')
                   conn.close()
