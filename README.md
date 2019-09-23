@@ -10,3 +10,10 @@ To use you must:
 Improvements to be implemented:
  -Bug fix in creating an existing database.
  -GUI creation and UI improvement.
+
+ Melhorias ungentes:
+  -validação do cpf
+  -colocar '*' nos campos oprigatórios
+  -tirar o numero inteiro da pasta
+  -adicionar a opção '3' para alterar dados
+  -resolver os problemas para alterar(fazer testes e ajustar o id)
