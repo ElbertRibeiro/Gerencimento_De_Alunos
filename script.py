@@ -122,7 +122,7 @@ while opcao !=7:
                   conn = sqlite3.connect('alunos.db')
                   cursor = conn.cursor()
                   # idermos definir o id a ser alterado
-                  id_numpasta = input('Digite o  numero da pasta para alterar os dados')
+                  id_numpasta = input('Digite o  numero da pasta para alterar os dados: ')
                   # como usamos o fone como parametro
                   # iremos criara um novo fone
                   novo_situacao = input("Digite a atual situação escolar: ")
@@ -140,7 +140,7 @@ while opcao !=7:
                   conn = sqlite3.connect('alunos.db')
                   cursor = conn.cursor()
                   # idermos definir o id a ser alterado
-                  id_numpasta = input('Digite o  numero da pasta para alterar os dados')
+                  id_numpasta = input('Digite o  numero da pasta para alterar os dados: ')
                   # como usamos o fone como parametro
                   # iremos criara um novo fone
                   novo_pedencias = input("Digite a atualização de pendencias: ")
