@@ -135,19 +135,14 @@ while opcao !=7:
                   conn.commit()
                   print('Dados alterados com sucesso')
                   
-
               elif escolha == 3:
                   conn = sqlite3.connect('alunos.db')
                   cursor = conn.cursor()
-                  # idermos definir o id a ser alterado
                   id_numpasta = input('Digite o  numero da pasta para alterar os dados: ')
-                  # como usamos o fone como parametro
-                  # iremos criara um novo fone
-                  novo_pedencias = input("Digite a atualização de pendencias: ")
-                  # alterando os dados da tabela
+                  novo_pedencias = input('Digite a atualização de pendencias: ')
                   cursor.execute("""
                   UPDATE alunos
-                  SET pedencias = ?,
+                  SET pedencias = ?
                   WHERE id_numpasta = ?
                   """, (novo_pedencias, id_numpasta,))
                   conn.commit()
