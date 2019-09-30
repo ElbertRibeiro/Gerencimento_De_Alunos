@@ -19,9 +19,6 @@ Improvements to be implemented:
   
 <!DOCTYPE html>
 <html>
-  <head>
-  <script type="text/javascript" src="https://latform.linkedin.com/badges/js/profile.js" async defer></script>
-  </head>
   <body>
   <div class="LI-profile-badge" data-version="v1" data-size="medium" data-locale="pt_BR" data-type="vertical" data-theme="dark" 
        data-vanity="elbert-ribeiro">
