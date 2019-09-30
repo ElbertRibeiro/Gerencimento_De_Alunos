@@ -19,9 +19,13 @@ Improvements to be implemented:
   
 <!DOCTYPE html>
 <html>
-<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
-<div class="LI-profile-badge" data-version="v1" data-size="medium" data-locale="pt_BR" data-type="vertical"
-    data-theme="dark" data-vanity="elbert-ribeiro">
+  <head>
+  <script type="text/javascript" src="https://latform.linkedin.com/badges/js/profile.js" async defer></script>
+  </head>
+  <body>
+  <div class="LI-profile-badge" data-version="v1" data-size="medium" data-locale="pt_BR" data-type="vertical" data-theme="dark" 
+       data-vanity="elbert-ribeiro">
     <a class="LI-simple-link" href='https://br.linkedin.com/in/elbert-ribeiro?trk=profile-badge'>Elbert Ribeiro</a>
-</div>
+  </div>
+  </body>
 </html>
