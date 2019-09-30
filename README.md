@@ -16,5 +16,12 @@ Improvements to be implemented:
   -colocar '*' nos campos oprigatórios
   -tirar o numero inteiro da pasta
   -resolver os problemas para alterar(fazer testes e ajustar o id)
-  <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
-  <div class="LI-profile-badge"  data-version="v1" data-size="medium" data-locale="pt_BR" data-type="vertical" data-theme="dark" data-vanity="elbert-ribeiro"><a class="LI-simple-link" href='https://br.linkedin.com/in/elbert-ribeiro?trk=profile-badge'>Elbert Ribeiro</a></div>
+  
+<!DOCTYPE html>
+<html>
+<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
+<div class="LI-profile-badge" data-version="v1" data-size="medium" data-locale="pt_BR" data-type="vertical"
+    data-theme="dark" data-vanity="elbert-ribeiro">
+    <a class="LI-simple-link" href='https://br.linkedin.com/in/elbert-ribeiro?trk=profile-badge'>Elbert Ribeiro</a>
+</div>
+</html>
