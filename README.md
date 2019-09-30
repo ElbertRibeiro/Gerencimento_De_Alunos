@@ -22,7 +22,7 @@ Improvements to be implemented:
   <body>
   <div class="LI-profile-badge" data-version="v1" data-size="medium" data-locale="pt_BR" data-type="vertical" data-theme="dark" 
        data-vanity="elbert-ribeiro">
-    <a class="LI-simple-link" href='https://br.linkedin.com/in/elbert-ribeiro?trk=profile-badge'>Elbert Ribeiro</a>
+    <a class="LI-simple-link" href='https://br.linkedin.com/in/elbert-ribeiro?trk=profile-badge'>Elbert Ribeiro - LinkedIn</a>
   </div>
   </body>
 </html>
