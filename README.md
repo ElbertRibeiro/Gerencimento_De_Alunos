@@ -18,10 +18,12 @@ Python 3.7.7
 
 A step by step series of examples that tell you how to get a development env running
 
-Say what the step will be
+Download the project
+
+Run the Script on the terminal
 
 ```
-Give the example
+python script.py
 ```
 
 And repeat
