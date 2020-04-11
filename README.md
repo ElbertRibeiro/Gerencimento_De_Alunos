@@ -57,9 +57,9 @@ We use [Git](https://git-scm.com/) for versioning. For the versions available, s
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Elbert Ribeiro** - *Portfolio* - [Elbert Ribeiro](http://elbertribeiro.github.io/)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/ElbertRibeiro/Student-Management-System/graphs/contributors) who participated in this project.
 
 ## License
 
