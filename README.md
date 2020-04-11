@@ -57,7 +57,7 @@ We use [Git](https://git-scm.com/) for versioning. For the versions available, s
 
 ## Authors
 
-* **Elbert Ribeiro** - *Portfolio* - [Elbert Ribeiro](http://elbertribeiro.github.io/)
+* **Elbert Ribeiro** - ** - [Portfolio](http://elbertribeiro.github.io/)
 
 See also the list of [contributors](https://github.com/ElbertRibeiro/Student-Management-System/graphs/contributors) who participated in this project.
 
