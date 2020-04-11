@@ -67,6 +67,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+* [Package Structure](http://as.ynchrono.us/2007/12/filesystem-structure-of-python-project_21.html)
