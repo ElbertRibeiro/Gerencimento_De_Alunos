@@ -1,6 +1,6 @@
-# Project Title
+# Student Management System
 
-One Paragraph of project description goes here
+System made in Python. This is a student management system where the user can create a database, register students, delete, and update data.
 
 ## Getting Started
 
@@ -11,7 +11,7 @@ These instructions will get you a copy of the project up and running on your loc
 What things you need to install the software and how to install them
 
 ```
-Give examples
+Python 3.7.7
 ```
 
 ### Installing
