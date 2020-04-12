@@ -1,6 +1,6 @@
 import app.package.createDb
 import app.package.consultDb
-
+import app.package.insertDb
 
 opcao = 0
 while opcao !=7:
@@ -12,3 +12,6 @@ while opcao !=7:
 
     elif opcao == 2:
         print ( app.package.consultDb.consultDb() )
+
+    elif opcao == 3:
+        print ( app.package.insertDb.insertDb() )
