@@ -2,6 +2,8 @@ import app.package.createDb
 import app.package.consultDb
 import app.package.insertDb
 import app.package.deleteDb
+import app.package.changeDb
+
 
 opcao = 0
 while opcao !=7:
@@ -19,3 +21,6 @@ while opcao !=7:
 
     elif opcao == 4:
         print( app.package.deleteDb.deleteDb() )
+    
+    elif opcao == 5:
+        print( app.package.changeDb.changeDb() )
