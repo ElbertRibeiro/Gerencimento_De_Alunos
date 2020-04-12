@@ -1,11 +1,11 @@
 import sqlite3
 
 def createDb():
-    databaseFile= "app/database/alunos.db"
+    databaseFile = "app/database/alunos.db"
     conn = sqlite3.connect(databaseFile)
-    # definindo um cursor
+    
     cursor = conn.cursor()
-    # criando uma tabela (schema)
+    
     cursor.execute("""
         CREATE TABLE  IF NOT EXISTS alunos (
             id_numpasta TEXT NOT NULL,
