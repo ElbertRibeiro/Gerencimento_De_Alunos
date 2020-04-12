@@ -1,7 +1,8 @@
 import sqlite3
 
 def createDb():
-    conn = sqlite3.connect('alunos.db')
+    databaseFile= "app/database/alunos.db"
+    conn = sqlite3.connect(databaseFile)
     # definindo um cursor
     cursor = conn.cursor()
     # criando uma tabela (schema)
