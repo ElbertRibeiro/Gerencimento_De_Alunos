@@ -48,7 +48,8 @@ Add additional notes about how to deploy this on a live system
 ## Built With
 
 * [Python](https://docs.python.org/3/) - Ultilized Structure
-* [SqLite3](https://docs.python.org/3.3/library/sqlite3.html) - Ultilized database
+* [SqLite3](https://docs.python.org/3.3/library/sqlite3.html) - Ultilized Database
+* [wxPython](https://www.wxpython.org/) - Ultilized Graphical Interface
 
 
 ## Versioning
