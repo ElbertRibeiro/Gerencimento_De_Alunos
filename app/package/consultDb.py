@@ -8,7 +8,9 @@ def consultDb():
     cursor.execute("""
     SELECT * FROM  alunos;
     """)
+    
     for linha in cursor.fetchall():
-        print(linha)
+        print (linha)
     conn.close()
+
 
