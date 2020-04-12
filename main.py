@@ -1,6 +1,7 @@
 import app.package.calculadora
+import app.package.createDb
 
-while True:
+'''while True:
     print("1. Soma")
     print("2. Subtração")
     print("3. Multiplicação")
@@ -18,4 +19,13 @@ while True:
     elif op==4:
         print("Divisão:", app.package.calculadora.divisao(x,y))
     else:
-        print("Opção inválida,tente novamente")
+        print("Opção inválida,tente novamente")'''
+
+
+opcao = 0
+while opcao !=7:
+    print("1 = Criar banco de dados")
+    opcao = int(input("Escolha sua opcao:"))
+    #criando db
+    if opcao == 1:
+        print( app.package.createDb.createDb())
