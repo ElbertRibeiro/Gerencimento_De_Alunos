@@ -7,5 +7,5 @@ setup(
    author='Elbert Ribeiro',
    author_email='elbertprofissional@gmail.com',
    #packages=['foo'],  #same as name
-   #install_requires=['bar', 'greek'], #external packages as dependencies
+   install_requires=['sqlite3', 'wxPython'], #external packages as dependencies
 )
