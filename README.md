@@ -23,7 +23,7 @@ Download the project
 Run the Script on the terminal
 
 ```
-python script.py
+python setup.py
 ```
 
 
