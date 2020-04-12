@@ -7,7 +7,7 @@ def createDb():
     cursor = conn.cursor()
     # criando uma tabela (schema)
     cursor.execute("""
-        CREATE TABLE alunos (
+        CREATE TABLE  IF NOT EXISTS alunos (
             id_numpasta TEXT NOT NULL,
             nome TEXT NOT NULL,
             idade INTEGER,
