@@ -1,3 +1,4 @@
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.DpSize
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Window
@@ -10,6 +11,7 @@ fun main() = application {
         resizable = false,
         state = rememberWindowState(size = DpSize(width = 1280.dp, height = 720.dp)),
         title = "school-management",
+        icon = painterResource("icon.jpeg")
     ) {
         App()
     }
