@@ -22,7 +22,7 @@ fun setupNavigation() {
         }
 
         composable(
-            route = "SegundaTela"
+            route = "BuscarAlunos"
         ) {
             BuscarAlunos(navController = navController)
         }

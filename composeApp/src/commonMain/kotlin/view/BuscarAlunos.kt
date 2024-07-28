@@ -19,14 +19,14 @@ fun BuscarAlunos(navController: NavHostController) {
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Text("Segunda Tela")
+        Text("Buscar Alunos")
         Button(
             onClick = { navController.navigate("Home") },
             colors = ButtonDefaults.buttonColors(
                 backgroundColor = Color.Red
             )
         ) {
-            Text("Navegar")
+            Text("Home")
         }
     }
 }

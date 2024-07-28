@@ -26,7 +26,7 @@ fun CadastrarAlunos(navController: NavHostController) {
                 backgroundColor = Color.Red
             )
         ) {
-            Text("Navegar")
+            Text("Home")
         }
     }
 }

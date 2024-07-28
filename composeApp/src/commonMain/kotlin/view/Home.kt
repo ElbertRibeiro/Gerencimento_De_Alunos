@@ -21,12 +21,12 @@ fun Home(navController: NavController) {
     ){
         Text("Home Screen")
         Button(
-            onClick = { navController.navigate("SegundaTela") },
+            onClick = { navController.navigate("BuscarAlunos") },
             colors = ButtonDefaults.buttonColors(
                 backgroundColor = Color.Blue
             )
         ){
-            Text("Navegar")
+            Text("Buscar Alunos")
         }
 
         Button(
