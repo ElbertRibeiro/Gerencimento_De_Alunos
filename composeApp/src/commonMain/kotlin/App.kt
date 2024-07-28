@@ -1,3 +1,4 @@
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -8,6 +9,8 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.unit.dp
 import model.User
 import org.jetbrains.compose.ui.tooling.preview.Preview
@@ -39,7 +42,8 @@ fun App() {
             BasicTextField(
                 value = userName,
                 onValueChange = { userName = it },
-                modifier = Modifier.fillMaxWidth().padding(8.dp),
+                modifier = Modifier.fillMaxWidth().padding(8.dp)
+                    .border(1.dp, Color.Red, RectangleShape),
                 singleLine = true
             )
             Button(onClick = {
@@ -56,7 +60,8 @@ fun App() {
             BasicTextField(
                 value = searchQuery,
                 onValueChange = { searchQuery = it },
-                modifier = Modifier.fillMaxWidth().padding(8.dp),
+                modifier = Modifier.fillMaxWidth().padding(8.dp)
+                    .border(1.dp, Color.Red, RectangleShape),
                 singleLine = true
             )
             Spacer(Modifier.height(8.dp))
