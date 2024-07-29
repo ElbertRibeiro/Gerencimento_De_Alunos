@@ -3,9 +3,9 @@ package view
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.Button
-import androidx.compose.material.ButtonDefaults
-import androidx.compose.material.Text
+import androidx.compose.material.*
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -14,19 +14,25 @@ import androidx.navigation.NavHostController
 
 @Composable
 fun BuscarAlunos(navController: NavHostController) {
-    Column(
-        modifier = Modifier.fillMaxSize(),
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
+    Scaffold(
+        topBar = {
+            TopAppBar(title = { Text("Buscar Alunos") })
+        }
     ) {
-        Text("Buscar Alunos")
-        Button(
-            onClick = { navController.navigate("Home") },
-            colors = ButtonDefaults.buttonColors(
-                backgroundColor = Color.Red
-            )
+        Column(
+            modifier = Modifier.fillMaxSize(),
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Text("Home")
+            Text("Buscar Alunos")
+            Button(
+                onClick = { navController.navigate("Home") },
+                colors = ButtonDefaults.buttonColors(
+                    backgroundColor = Color.Red
+                )
+            ) {
+                Text("Home")
+            }
         }
     }
 }
