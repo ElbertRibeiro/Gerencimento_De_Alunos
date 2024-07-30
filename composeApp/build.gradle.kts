@@ -20,6 +20,7 @@ kotlin {
             implementation(compose.components.resources)
             implementation(compose.components.uiToolingPreview)
             implementation(libs.navigation.compose)
+            implementation(libs.mongo)
         }
         desktopMain.dependencies {
             implementation(compose.desktop.currentOs)
