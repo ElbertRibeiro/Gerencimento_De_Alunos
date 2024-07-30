@@ -10,7 +10,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
-import component.alertDialogErro
+import component.alertDialog
 
 @Composable
 fun CadastrarAlunos(navController: NavHostController) {
@@ -21,7 +21,7 @@ fun CadastrarAlunos(navController: NavHostController) {
     var showDialog by remember { mutableStateOf(false) }
 
     if (showDialog) {
-        alertDialogErro(
+        alertDialog(
             onConfirmation = { showDialog = false },
             dialogTitle = "Dados Inválidos",
             dialogText = "Verificar se todos os campos exigidos estão preenchidos"

@@ -44,7 +44,7 @@ fun alertDialog(
 }
 
 @Composable
-fun alertDialogErro(
+fun alertDialog(
     onConfirmation: () -> Unit,
     dialogTitle: String,
     dialogText: String,
