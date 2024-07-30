@@ -21,6 +21,10 @@ kotlin {
             implementation(compose.components.resources)
             implementation(compose.components.uiToolingPreview)
             implementation(libs.navigation.compose)
+            implementation("org.jetbrains.exposed:exposed-core:0.35.1")
+            implementation("org.jetbrains.exposed:exposed-dao:0.35.1")
+            implementation("org.jetbrains.exposed:exposed-jdbc:0.35.1")
+            implementation("org.xerial:sqlite-jdbc:3.36.0")
         }
         desktopMain.dependencies {
             implementation(compose.desktop.currentOs)
