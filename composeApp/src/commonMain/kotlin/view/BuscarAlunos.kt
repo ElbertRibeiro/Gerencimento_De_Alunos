@@ -3,15 +3,15 @@ package view
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.Scaffold
-import androidx.compose.material.Text
-import androidx.compose.material.TopAppBar
-import androidx.compose.runtime.Composable
+import androidx.compose.material.*
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 
 @Composable
 fun BuscarAlunos() {
+    var text by remember { mutableStateOf("") }
+
     Scaffold(
         topBar = {
             TopAppBar(title = { Text("Buscar Alunos") })
@@ -22,7 +22,11 @@ fun BuscarAlunos() {
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Text("Buscar Alunos")
+            OutlinedTextField(
+                value = text,
+                onValueChange = { text = it },
+                label = { Text("Nome do Aluno") }
+            )
         }
     }
 }
