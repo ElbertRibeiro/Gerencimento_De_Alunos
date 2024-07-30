@@ -4,7 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import view.BuscarAlunos
+import view.buscarAlunos
 import view.CadastrarAlunos
 import view.home
 
@@ -20,7 +20,7 @@ fun setupNavigation() {
         }
 
         composable(route = "BuscarAlunos") {
-            BuscarAlunos(navController = navController)
+            buscarAlunos(navController = navController)
         }
         composable(route = "CadastrarAlunos") {
             CadastrarAlunos(navController = navController)

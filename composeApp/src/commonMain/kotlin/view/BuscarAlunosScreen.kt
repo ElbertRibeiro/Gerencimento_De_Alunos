@@ -11,7 +11,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 
 @Composable
-fun BuscarAlunos(navController: NavController) {
+fun buscarAlunos(navController: NavController) {
     var text by remember { mutableStateOf("") }
 
     Scaffold(
