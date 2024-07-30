@@ -40,7 +40,7 @@ fun setupNavigation() {
             modifier = Modifier.padding(innerPadding)
         ) {
             composable(route = "BuscarAlunos") {
-                BuscarAlunos(navController = navController)
+                BuscarAlunos()
             }
             composable(route = "CadastrarAlunos") {
                 CadastrarAlunos(navController = navController)

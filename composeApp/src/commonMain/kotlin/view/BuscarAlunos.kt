@@ -3,15 +3,15 @@ package view
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.*
+import androidx.compose.material.Scaffold
+import androidx.compose.material.Text
+import androidx.compose.material.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
-import androidx.navigation.NavHostController
 
 @Composable
-fun BuscarAlunos(navController: NavHostController) {
+fun BuscarAlunos() {
     Scaffold(
         topBar = {
             TopAppBar(title = { Text("Buscar Alunos") })
@@ -23,14 +23,6 @@ fun BuscarAlunos(navController: NavHostController) {
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Text("Buscar Alunos")
-            Button(
-                onClick = { navController.navigate("Home") },
-                colors = ButtonDefaults.buttonColors(
-                    backgroundColor = Color.Red
-                )
-            ) {
-                Text("Home")
-            }
         }
     }
 }
