@@ -9,7 +9,7 @@ import navigation.setupNavigation
 fun main() = application {
     Window(
         onCloseRequest = ::exitApplication,
-        resizable = false,
+        resizable = true,
         state = rememberWindowState(size = DpSize(width = 1280.dp, height = 720.dp)),
         title = "School Management",
         icon = painterResource("icon.png")
