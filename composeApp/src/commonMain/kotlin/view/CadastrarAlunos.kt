@@ -1,19 +1,23 @@
 package view
 
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
+import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 
 @Composable
 fun CadastrarAlunos(navController: NavHostController) {
+    var name by remember { mutableStateOf("") }
+    var age by remember { mutableStateOf("") }
+    var email by remember { mutableStateOf("") }
+    var submitted by remember { mutableStateOf(false) }
+
     Scaffold(
         topBar = {
             TopAppBar(
@@ -29,19 +33,59 @@ fun CadastrarAlunos(navController: NavHostController) {
             )
         }
     ) {
-        Column(
-            modifier = Modifier.fillMaxSize(),
-            verticalArrangement = Arrangement.Center,
-            horizontalAlignment = Alignment.CenterHorizontally
-        ) {
-            Text("Cadastrar Alunos")
-            Button(
-                onClick = { navController.navigate("Home") },
-                colors = ButtonDefaults.buttonColors(
-                    backgroundColor = Color.Red
+        Column(modifier = Modifier.padding(16.dp)) {
+            if (submitted) {
+                Text("Cadastro realizado com sucesso!", style = MaterialTheme.typography.h6)
+            } else {
+                Text("Formulário de Cadastro de Aluno", style = MaterialTheme.typography.h6)
+                Spacer(modifier = Modifier.height(16.dp))
+
+                OutlinedTextField(
+                    value = name,
+                    onValueChange = { name = it },
+                    label = { Text("Nome") },
+                    modifier = Modifier.fillMaxWidth()
                 )
-            ) {
-                Text("Home")
+                Spacer(modifier = Modifier.height(8.dp))
+
+                OutlinedTextField(
+                    value = age,
+                    onValueChange = { age = it },
+                    label = { Text("Idade") },
+                    modifier = Modifier.fillMaxWidth(),
+                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
+                )
+                Spacer(modifier = Modifier.height(8.dp))
+
+                OutlinedTextField(
+                    value = email,
+                    onValueChange = { email = it },
+                    label = { Text("Email") },
+                    modifier = Modifier.fillMaxWidth(),
+                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email)
+                )
+                Spacer(modifier = Modifier.height(16.dp))
+
+                Row {
+                    Button(onClick = {
+                        if (name.isNotBlank() && age.isNotBlank() && email.isNotBlank()) {
+                            submitted = true
+                        } else {
+                            // Aqui você pode adicionar lógica para lidar com campos não preenchidos
+                        }
+                    }) {
+                        Text("Cadastrar")
+                    }
+                    Button(onClick = {
+                        name = ""
+                        age = ""
+                        email = ""
+                    }) {
+                        Text("Limpar")
+                    }
+                }
+
+
             }
         }
     }
