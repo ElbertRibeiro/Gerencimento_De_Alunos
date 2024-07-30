@@ -45,7 +45,11 @@ fun CadastrarAlunos(navController: NavHostController) {
     ) {
         Column(modifier = Modifier.padding(16.dp)) {
             if (submitted) {
-                Text("Cadastro realizado com sucesso!", style = MaterialTheme.typography.h6)
+                alertDialog(
+                    onConfirmation = { navController.navigate("CadastrarAlunos") },
+                    dialogTitle = "Cadastro realizado com sucesso!",
+                    dialogText = ""
+                )
             } else {
                 Text("Formulário de Cadastro de Aluno", style = MaterialTheme.typography.h6)
                 Spacer(modifier = Modifier.height(16.dp))
