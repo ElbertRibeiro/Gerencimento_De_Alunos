@@ -65,7 +65,7 @@ fun alertDialog(
                     onConfirmation()
                 }
             ) {
-                Text("Confirm")
+                Text("Confirmar")
             }
         }
     )
