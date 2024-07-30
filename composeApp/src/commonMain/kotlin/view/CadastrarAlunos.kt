@@ -10,6 +10,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
+import component.alertDialogErro
 
 @Composable
 fun CadastrarAlunos(navController: NavHostController) {
@@ -17,6 +18,15 @@ fun CadastrarAlunos(navController: NavHostController) {
     var age by remember { mutableStateOf("") }
     var email by remember { mutableStateOf("") }
     var submitted by remember { mutableStateOf(false) }
+    var showDialog by remember { mutableStateOf(false) }
+
+    if (showDialog) {
+        alertDialogErro(
+            onConfirmation = { showDialog = false },
+            dialogTitle = "Dados Inválidos",
+            dialogText = "Verificar se todos os campos exigidos estão preenchidos"
+        )
+    }
 
     Scaffold(
         topBar = {
@@ -71,7 +81,7 @@ fun CadastrarAlunos(navController: NavHostController) {
                         if (name.isNotBlank() && age.isNotBlank() && email.isNotBlank()) {
                             submitted = true
                         } else {
-                            // Aqui você pode adicionar lógica para lidar com campos não preenchidos
+                            showDialog = true
                         }
                     }) {
                         Text("Cadastrar")
@@ -87,8 +97,6 @@ fun CadastrarAlunos(navController: NavHostController) {
                         Text("Limpar")
                     }
                 }
-
-
             }
         }
     }
