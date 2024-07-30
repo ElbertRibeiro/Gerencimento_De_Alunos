@@ -76,6 +76,9 @@ fun CadastrarAlunos(navController: NavHostController) {
                     }) {
                         Text("Cadastrar")
                     }
+
+                    Spacer(modifier = Modifier.width(8.dp))
+
                     Button(onClick = {
                         name = ""
                         age = ""
