@@ -26,6 +26,14 @@ kotlin {
             implementation(compose.desktop.currentOs)
         }
     }
+
+    sqldelight {
+        databases {
+            create("AppDatabase") {
+                packageName.set("com.jetbrains.spacetutorial.cache")
+            }
+        }
+    }
 }
 
 
