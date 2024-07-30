@@ -14,7 +14,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.unit.dp
-import model.User
+import database.User
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
 @Composable
@@ -26,7 +26,7 @@ fun App() {
     var nextId by remember { mutableStateOf(1) }
 
     fun addUser(name: String) {
-        users = users + User(nextId, name)
+        users = users + User(name, nextId)
         nextId++
     }
 
@@ -69,7 +69,7 @@ fun App() {
             Spacer(Modifier.height(8.dp))
             LazyColumn {
                 items(searchUsers(searchQuery)) { user ->
-                    Text("ID: ${user.id}, Nome: ${user.name}")
+                    Text("ID: ${user.age}, Nome: ${user.name}")
                 }
             }
         }
