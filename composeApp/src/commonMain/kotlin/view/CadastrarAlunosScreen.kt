@@ -11,6 +11,7 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import component.alertDialog
+import database.UserRepository.addUser
 
 @Composable
 fun CadastrarAlunos(navController: NavHostController) {
@@ -64,7 +65,11 @@ fun CadastrarAlunos(navController: NavHostController) {
 
                 OutlinedTextField(
                     value = age,
-                    onValueChange = { age = it },
+                    onValueChange = { newValue ->
+                        if (newValue.all { it.isDigit() }) {
+                            age = newValue
+                        }
+                    },
                     label = { Text("Idade") },
                     modifier = Modifier.fillMaxWidth(),
                     keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
@@ -84,6 +89,7 @@ fun CadastrarAlunos(navController: NavHostController) {
                     Button(onClick = {
                         if (name.isNotBlank() && age.isNotBlank() && email.isNotBlank()) {
                             submitted = true
+                            addUser(name, age.toInt())
                         } else {
                             showDialog = true
                         }
