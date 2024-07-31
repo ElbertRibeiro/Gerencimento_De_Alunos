@@ -1,4 +1,4 @@
-package database
+package domain.studant.entity
 
 import org.jetbrains.exposed.dao.id.IntIdTable
 

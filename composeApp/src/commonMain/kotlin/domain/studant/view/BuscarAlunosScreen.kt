@@ -1,4 +1,4 @@
-package view
+package domain.studant.view
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -11,8 +11,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import database.UserRepository
-import database.UserRepository.findUserByName
+import domain.studant.repository.UserRepository
+import domain.studant.repository.UserRepository.findUserByName
 
 @Composable
 fun buscarAlunos(navController: NavController) {
