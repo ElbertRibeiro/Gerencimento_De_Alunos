@@ -6,7 +6,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import domain.studant.view.buscarAlunos
 import domain.studant.view.CadastrarAlunos
-import view.home
+import domain.home.view.home
 
 @Composable
 fun setupNavigation() {

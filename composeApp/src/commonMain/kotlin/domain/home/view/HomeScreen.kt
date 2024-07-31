@@ -1,4 +1,4 @@
-package view
+package domain.home.view
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
