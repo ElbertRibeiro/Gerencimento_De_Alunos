@@ -4,6 +4,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
 import androidx.compose.ui.window.rememberWindowState
+import configuration.IntialConfig
 import navigation.setupNavigation
 
 fun main() = application {
@@ -14,6 +15,7 @@ fun main() = application {
         title = "School Management",
         icon = painterResource("icon.png")
     ) {
+        IntialConfig()
         setupNavigation()
     }
 }
