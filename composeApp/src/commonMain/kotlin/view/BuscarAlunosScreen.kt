@@ -11,11 +11,13 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import database.UserRepository
 import database.UserRepository.findUserByName
 
 @Composable
 fun buscarAlunos(navController: NavController) {
     var text by remember { mutableStateOf("") }
+    val studants = UserRepository.getAllUsers()
 
     Scaffold(
         topBar = {
@@ -47,8 +49,14 @@ fun buscarAlunos(navController: NavController) {
             Spacer(Modifier.height(8.dp))
 
             LazyColumn {
-                items(findUserByName(text)) { user ->
-                    Text("Nome: ${user.name}, Idade: ${user.age}")
+                if (text.isNotEmpty()) {
+                    items(findUserByName(text)) { user ->
+                        Text("Nome: ${user.name}, Idade: ${user.age}")
+                    }
+                } else {
+                    items(studants) { studant ->
+                        Text("Nome: ${studant.name}, Idade: ${studant.age}")
+                    }
                 }
             }
         }
