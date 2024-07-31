@@ -1,8 +1,6 @@
 package domain.studant.view
 
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
@@ -11,6 +9,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import component.StudantListComponent.studantList
 import domain.studant.repository.UserRepository
 import domain.studant.repository.UserRepository.findUserByName
 
@@ -48,16 +47,10 @@ fun buscarAlunos(navController: NavController) {
 
             Spacer(Modifier.height(8.dp))
 
-            LazyColumn {
-                if (text.isNotEmpty()) {
-                    items(findUserByName(text)) { user ->
-                        Text("Nome: ${user.name}, Idade: ${user.age}")
-                    }
-                } else {
-                    items(studants) { studant ->
-                        Text("Nome: ${studant.name}, Idade: ${studant.age}")
-                    }
-                }
+            if (text.isNotEmpty()) {
+                studantList(findUserByName(text))
+            } else {
+                studantList(studants)
             }
         }
     }
