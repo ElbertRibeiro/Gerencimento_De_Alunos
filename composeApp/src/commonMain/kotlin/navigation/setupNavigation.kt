@@ -4,9 +4,9 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import domain.studant.view.buscarAlunos
-import domain.studant.view.CadastrarAlunos
-import domain.home.view.home
+import view.buscarAlunos
+import view.CadastrarAlunos
+import view.home
 
 @Composable
 fun setupNavigation() {
