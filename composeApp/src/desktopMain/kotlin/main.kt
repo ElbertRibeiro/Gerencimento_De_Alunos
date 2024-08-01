@@ -13,7 +13,7 @@ fun main() = application {
         resizable = true,
         state = rememberWindowState(size = DpSize(width = 1280.dp, height = 720.dp)),
         title = "School Management System",
-        icon = painterResource("icon.png")
+        icon = painterResource("img/icon.png")
     ) {
         IntialConfig()
         setupNavigation()
