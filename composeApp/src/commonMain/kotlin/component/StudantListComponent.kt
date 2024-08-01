@@ -21,8 +21,8 @@ object StudantListComponent {
         LazyColumn {
             items(studants) { user ->
                 Card(
-                    elevation = 3.dp,
-                    modifier = Modifier.padding(20.dp, 0.dp)
+                    elevation = 2.dp,
+                    modifier = Modifier.padding(20.dp, 4.dp)
                 ) {
                     Row(
                         modifier = Modifier
