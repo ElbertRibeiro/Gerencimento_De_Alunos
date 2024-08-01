@@ -10,8 +10,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import component.StudantListComponent.studantList
-import domain.studant.repository.UserRepository
-import domain.studant.repository.UserRepository.findUserByName
+import domain.studant.UserRepository
+import domain.studant.UserRepository.findUserByName
 
 @Composable
 fun buscarAlunos(navController: NavController) {

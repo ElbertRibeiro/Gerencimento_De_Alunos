@@ -1,7 +1,5 @@
-package domain.studant.repository
+package domain.studant
 
-import domain.studant.dto.User
-import domain.studant.entity.Users
 import org.jetbrains.exposed.sql.insert
 import org.jetbrains.exposed.sql.select
 import org.jetbrains.exposed.sql.selectAll
