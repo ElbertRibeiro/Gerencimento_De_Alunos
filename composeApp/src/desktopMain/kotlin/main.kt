@@ -12,7 +12,7 @@ fun main() = application {
         onCloseRequest = ::exitApplication,
         resizable = true,
         state = rememberWindowState(size = DpSize(width = 1280.dp, height = 720.dp)),
-        title = "School Management",
+        title = "School Management System",
         icon = painterResource("icon.png")
     ) {
         IntialConfig()

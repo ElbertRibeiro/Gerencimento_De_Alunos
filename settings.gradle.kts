@@ -1,4 +1,4 @@
-rootProject.name = "school-management"
+rootProject.name = "student-management-system"
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 pluginManagement {
