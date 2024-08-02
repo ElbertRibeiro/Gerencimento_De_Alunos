@@ -6,6 +6,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import view.buscarAlunos
 import view.CadastrarAlunos
+import view.EditStudentScreen.editStudentData
 import view.home
 
 @Composable
@@ -24,6 +25,10 @@ fun setupNavigation() {
         }
         composable(route = "CadastrarAlunos") {
             CadastrarAlunos(navController = navController)
+        }
+
+        composable(route = "EditStudent") {
+            editStudentData(navController = navController)
         }
     }
 }

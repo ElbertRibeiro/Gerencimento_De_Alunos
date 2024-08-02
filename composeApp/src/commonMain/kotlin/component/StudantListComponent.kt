@@ -13,8 +13,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import domain.studant.StudantService
 import domain.studant.StudantDto
+import domain.studant.StudantService
 
 object StudantListComponent {
 
@@ -59,7 +59,7 @@ object StudantListComponent {
                                 .align(alignment = Alignment.CenterVertically),
                         )
                         Button(
-                            onClick = { },
+                            onClick = { navController.navigate("EditStudent") },
                         ) {
                             Icon(
                                 imageVector = Icons.Default.Edit,
