@@ -1,5 +1,6 @@
 package domain.studant
 
+import org.jetbrains.exposed.sql.deleteWhere
 import org.jetbrains.exposed.sql.insert
 import org.jetbrains.exposed.sql.select
 import org.jetbrains.exposed.sql.selectAll
@@ -28,6 +29,12 @@ object UserRepository {
             Users.select { Users.name eq name }.map {
                 User(it[Users.name], it[Users.age])
             }
+        }
+    }
+
+    fun deleteUser(name: String) {
+        transaction {
+            Users.deleteWhere { Users.name eq name }
         }
     }
 }
