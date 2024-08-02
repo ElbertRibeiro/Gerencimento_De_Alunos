@@ -7,17 +7,34 @@ import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.Edit
-import androidx.compose.runtime.Composable
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
+import domain.studant.StudantService
 import domain.studant.User
 
 object StudantListComponent {
 
     @Composable
-    fun studantList(studants: List<User>) {
+    fun studantList(studants: List<User>, navController: NavController) {
+        var deleteStudant by remember { mutableStateOf(false) }
+        var studantName by remember { mutableStateOf("") }
+
+        if (deleteStudant) {
+            alertDialog(
+                onDismissRequest = { navController.navigate("BuscarAlunos") },
+                onConfirmation = {
+                    StudantService.deleteStudant(studantName)
+                    navController.navigate("BuscarAlunos")
+                },
+                dialogTitle = "Deletar dados do estudante",
+                dialogText = "Ao confirmar, você está deletando os dados do aluno: $studantName"
+            )
+        }
+
         LazyColumn {
             items(studants) { user ->
                 Card(
@@ -53,7 +70,10 @@ object StudantListComponent {
                         Spacer(Modifier.width(8.dp))
 
                         Button(
-                            onClick = { },
+                            onClick = {
+                                deleteStudant = true
+                                studantName = user.name
+                            },
                             colors = ButtonDefaults.buttonColors(backgroundColor = Color.Red),
                         ) {
                             Icon(

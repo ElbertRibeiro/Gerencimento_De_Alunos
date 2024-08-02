@@ -48,9 +48,9 @@ fun buscarAlunos(navController: NavController) {
             Spacer(Modifier.height(8.dp))
 
             if (text.isNotEmpty()) {
-                studantList(findUserByName(text))
+                studantList(findUserByName(text), navController)
             } else {
-                studantList(studants)
+                studantList(studants, navController)
             }
         }
     }
