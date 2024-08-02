@@ -10,6 +10,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
+import component.CustomSpacer
 import component.alertDialog
 import domain.studant.StudantRepository.addUser
 
@@ -61,8 +62,7 @@ object EditStudentScreen {
                         readOnly = true,
                         enabled = false
                     )
-                    Spacer(modifier = Modifier.height(8.dp))
-
+                    CustomSpacer.space8pd()
                     OutlinedTextField(
                         value = age,
                         onValueChange = { newValue ->
@@ -74,8 +74,7 @@ object EditStudentScreen {
                         modifier = Modifier.fillMaxWidth(),
                         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
                     )
-                    Spacer(modifier = Modifier.height(8.dp))
-
+                    CustomSpacer.space8pd()
                     OutlinedTextField(
                         value = email,
                         onValueChange = { email = it },
