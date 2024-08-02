@@ -1,6 +1,6 @@
 package domain.studant
 
-import domain.studant.UserRepository.deleteUser
+import domain.studant.StudantRepository.deleteUser
 
 object StudantService {
 

@@ -6,7 +6,7 @@ import org.jetbrains.exposed.sql.select
 import org.jetbrains.exposed.sql.selectAll
 import org.jetbrains.exposed.sql.transactions.transaction
 
-object UserRepository {
+object StudantRepository {
     fun addUser(name: String, age: Int) {
         transaction {
             Users.insert {

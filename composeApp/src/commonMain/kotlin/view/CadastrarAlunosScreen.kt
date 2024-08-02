@@ -11,7 +11,7 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import component.alertDialog
-import domain.studant.UserRepository.addUser
+import domain.studant.StudantRepository.addUser
 
 @Composable
 fun CadastrarAlunos(navController: NavHostController) {
