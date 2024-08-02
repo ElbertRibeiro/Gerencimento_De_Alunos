@@ -14,12 +14,12 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import domain.studant.StudantService
-import domain.studant.User
+import domain.studant.StudantDto
 
 object StudantListComponent {
 
     @Composable
-    fun studantList(studants: List<User>, navController: NavController) {
+    fun studantList(studants: List<StudantDto>, navController: NavController) {
         var deleteStudant by remember { mutableStateOf(false) }
         var studantName by remember { mutableStateOf("") }
 

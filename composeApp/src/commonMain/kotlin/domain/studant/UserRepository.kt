@@ -16,18 +16,18 @@ object UserRepository {
         }
     }
 
-    fun getAllUsers(): List<User> {
+    fun getAllUsers(): List<StudantDto> {
         return transaction {
             Users.selectAll().map {
-                User(it[Users.name], it[Users.age])
+                StudantDto(it[Users.name], it[Users.age])
             }
         }
     }
 
-    fun findUserByName(name: String): List<User> {
+    fun findUserByName(name: String): List<StudantDto> {
         return transaction {
             Users.select { Users.name eq name }.map {
-                User(it[Users.name], it[Users.age])
+                StudantDto(it[Users.name], it[Users.age])
             }
         }
     }
