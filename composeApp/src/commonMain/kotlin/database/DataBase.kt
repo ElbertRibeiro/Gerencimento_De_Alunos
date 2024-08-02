@@ -1,6 +1,6 @@
 package database
 
-import domain.studant.Users
+import domain.studant.Studant
 import org.jetbrains.exposed.sql.Database
 import org.jetbrains.exposed.sql.SchemaUtils
 import org.jetbrains.exposed.sql.transactions.transaction
@@ -11,6 +11,6 @@ fun initDatabase() {
 
 fun createTables() {
     transaction {
-        SchemaUtils.create(Users)
+        SchemaUtils.create(Studant)
     }
 }

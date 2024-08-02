@@ -9,32 +9,32 @@ import org.jetbrains.exposed.sql.transactions.transaction
 object StudantRepository {
     fun addUser(name: String, age: Int) {
         transaction {
-            Users.insert {
-                it[Users.name] = name
-                it[Users.age] = age
+            Studant.insert {
+                it[Studant.name] = name
+                it[Studant.age] = age
             }
         }
     }
 
     fun getAllUsers(): List<StudantDto> {
         return transaction {
-            Users.selectAll().map {
-                StudantDto(it[Users.name], it[Users.age])
+            Studant.selectAll().map {
+                StudantDto(it[Studant.name], it[Studant.age])
             }
         }
     }
 
     fun findUserByName(name: String): List<StudantDto> {
         return transaction {
-            Users.select { Users.name eq name }.map {
-                StudantDto(it[Users.name], it[Users.age])
+            Studant.select { Studant.name eq name }.map {
+                StudantDto(it[Studant.name], it[Studant.age])
             }
         }
     }
 
     fun deleteUser(name: String) {
         transaction {
-            Users.deleteWhere { Users.name eq name }
+            Studant.deleteWhere { Studant.name eq name }
         }
     }
 }
