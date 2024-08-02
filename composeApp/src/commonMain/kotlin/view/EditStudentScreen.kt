@@ -53,9 +53,6 @@ object EditStudentScreen {
                         dialogText = ""
                     )
                 } else {
-                    /* Text("Formulário de Cadastro de Aluno", style = MaterialTheme.typography.h6)
-                     Spacer(modifier = Modifier.height(16.dp))*/
-
                     OutlinedTextField(
                         value = name,
                         onValueChange = { },
@@ -100,15 +97,6 @@ object EditStudentScreen {
                             Text("Editar")
                         }
 
-                        Spacer(modifier = Modifier.width(8.dp))
-
-                        Button(onClick = {
-                            name = ""
-                            age = ""
-                            email = ""
-                        }) {
-                            Text("Limpar")
-                        }
                     }
                 }
             }
