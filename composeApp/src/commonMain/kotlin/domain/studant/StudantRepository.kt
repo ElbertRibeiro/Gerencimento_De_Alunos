@@ -1,9 +1,6 @@
 package domain.studant
 
-import org.jetbrains.exposed.sql.deleteWhere
-import org.jetbrains.exposed.sql.insert
-import org.jetbrains.exposed.sql.select
-import org.jetbrains.exposed.sql.selectAll
+import org.jetbrains.exposed.sql.*
 import org.jetbrains.exposed.sql.transactions.transaction
 
 object StudantRepository {
@@ -35,6 +32,16 @@ object StudantRepository {
     fun deleteUser(name: String) {
         transaction {
             Studant.deleteWhere { Studant.name eq name }
+        }
+    }
+
+    fun updateUser(name: String, newAge: Int) {
+        transaction {
+            Studant.update({
+                Studant.name eq name
+            }) {
+                it[age] = newAge
+            }
         }
     }
 }
