@@ -59,7 +59,7 @@ object StudantListComponent {
                                 .align(alignment = Alignment.CenterVertically),
                         )
                         Button(
-                            onClick = { navController.navigate("EditStudent") },
+                            onClick = { navController.navigate("EditStudent/${user.name}") },
                         ) {
                             Icon(
                                 imageVector = Icons.Default.Edit,

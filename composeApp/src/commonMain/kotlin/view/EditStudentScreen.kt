@@ -16,8 +16,7 @@ import domain.studant.StudantService
 
 object EditStudentScreen {
     @Composable
-    fun editStudentData(navController: NavHostController) {
-        var name by remember { mutableStateOf("Teste") }
+    fun editStudentData(navController: NavHostController,  name: String) {
         var age by remember { mutableStateOf("") }
         var email by remember { mutableStateOf("") }
         var submitted by remember { mutableStateOf(false) }

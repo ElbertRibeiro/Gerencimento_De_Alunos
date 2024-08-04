@@ -1,12 +1,14 @@
 package navigation
 
 import androidx.compose.runtime.Composable
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import view.buscarAlunos
+import androidx.navigation.navArgument
 import view.CadastrarAlunos
 import view.EditStudentScreen.editStudentData
+import view.buscarAlunos
 import view.home
 
 @Composable
@@ -27,8 +29,11 @@ fun setupNavigation() {
             CadastrarAlunos(navController = navController)
         }
 
-        composable(route = "EditStudent") {
-            editStudentData(navController = navController)
+        composable(
+            route = "EditStudent/{name}",
+            arguments = listOf(navArgument("name") { type = NavType.StringType })
+        ) { backStackEntry ->
+            editStudentData(navController = navController, backStackEntry.arguments?.getString("name") ?: "")
         }
     }
 }
