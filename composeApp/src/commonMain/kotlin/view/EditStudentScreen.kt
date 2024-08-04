@@ -12,7 +12,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import component.CustomSpacer
 import component.alertDialog
-import domain.studant.StudantRepository.addUser
+import domain.studant.StudantService
 
 object EditStudentScreen {
     @Composable
@@ -88,7 +88,7 @@ object EditStudentScreen {
                         Button(onClick = {
                             if (name.isNotBlank() && age.isNotBlank() && email.isNotBlank()) {
                                 submitted = true
-                                addUser(name, age.toInt())
+                                StudantService.updateStudent(name, age.toInt())
                             } else {
                                 showDialog = true
                             }
