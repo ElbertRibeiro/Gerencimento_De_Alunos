@@ -44,5 +44,5 @@ jobs:
       - name: Upload MSI artifact
         uses: actions/upload-artifact@v3
         with:
-          name: MyComposeApp
+          name: StudentManagementApp
           path: composeApp/build/compose/binaries/main/msi/*.msi
