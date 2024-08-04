@@ -17,7 +17,8 @@ import domain.studant.StudantService
 object EditStudentScreen {
     @Composable
     fun editStudentData(navController: NavHostController,  name: String) {
-        var age by remember { mutableStateOf("") }
+        val student = StudantService.findStudent(name)
+        var age by remember { mutableStateOf(student.age.toString()) }
         var email by remember { mutableStateOf("") }
         var submitted by remember { mutableStateOf(false) }
         var showDialog by remember { mutableStateOf(false) }
